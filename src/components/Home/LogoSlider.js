@@ -77,6 +77,7 @@ const LogoSlider = () => {
                                 src={logo} 
                                 className="w-28 sm:w-32 md:w-40 lg:w-48" // Different widths for mobile, tablet, and desktop
                                 alt={`Zimapeak client Logo ${i + 1} - Marketing Agency`} 
+                                loading="lazy"
                             />
                         </div>
                     ))}

@@ -6,9 +6,9 @@ const Services = () => {
 
     return (
         <div id="banner" className="z-10 px-4 sm:px-6 lg:px-8 bg-gray-100">
-            <div className="w-full flex flex-wrap py-10 md:py-0 md:h-[60vh] justify-center items-center gap-6 sm:gap-[1vw] z-10">
+            <div className="w-full flex flex-wrap md:flex-nowrap py-10 md:py-0 md:h-[60vh] justify-center items-center gap-6 sm:gap-[1vw] z-10">
 
-            <div className="sm:hidden sm:flex w-3/4 h-full flex-col justify-center items-center text-center">
+                <div className="md:hidden sm:flex w-3/4 h-full flex-col justify-center items-center text-center">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-2">Discover Our Expert Services</h2>
                     <p className="text-sm sm:text-base mb-4">
                         Whether you run an eCommerce store, a service-based business, or an agency seeking better results for your clients—we’re here to help you succeed.
@@ -72,7 +72,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="hidden sm:flex w-1/3 h-full flex-col justify-center items-center text-center">
+                <div className="hidden md:flex w-1/3 h-full flex-col justify-center items-center text-center">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-2">Discover Our Expert Services</h2>
                     <p className="text-sm sm:text-base mb-4">
                         Whether you run an eCommerce store, a service-based business, or an agency seeking better results for your clients—we’re here to help you succeed.
@@ -110,8 +110,9 @@ const Services = () => {
                     <div className="flex-shrink-0 mb-4">
                         <img
                             src="https://zimapeak.com/go/wp-content/uploads/2024/12/metalogo.png" // Update with the correct image path
-                            alt="Card Image"
+                            // alt="Card Image"
                             className="w-[7rem] h-[7rem] object-contain rounded-t-xl"
+                            loading="lazy"
                         />
                     </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import contactVideo from "../videos/Support.mp4"; // Adjust the path as per your project structure
-import { BsArrowRightCircle } from "react-icons/bs";
+import contactVideo from "../videos/Support.webm"
+import { ArrowRightCircle } from 'lucide-react';
 import axios from "axios";
 
 const Contact = () => {
@@ -16,7 +16,7 @@ const Contact = () => {
     const [formVisible, setFormVisible] = useState(true); // State to control form visibility
     const [showSuccessMessage, setShowSuccessMessage] = useState(false); // State to control success message visibility
     const [error, setError] = useState(""); // State to store error messages
-    const [showHiThere, setShowHiThere] = useState(false); // State to control "Hi there" visibility with animation
+    const [showHiThere, setShowHiThere] = useState(false); 
     const [loading, setLoading] = useState(false); // State to track loading
 
     const handleInputChange = (e) => {
@@ -31,7 +31,7 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         // Validation for required fields
         if (
             !formData.fullName ||
@@ -45,11 +45,11 @@ const Contact = () => {
         } else {
             setError(""); // Clear any previous error
         }
-    
+
         // Fetch user IP or any other additional data
         const userIp = await getUserIP(); // Replace with your IP-fetching method
         const locationData = await getIpAndCountry(); // Get location data from IP
-    
+
         const dataToCRM = {
             fullName: formData.fullName,
             phone: formData.phone,
@@ -65,29 +65,29 @@ const Contact = () => {
             contactType: "lead",
             source: window.location.href,
         };
-    
+
         setLoading(true); // Set loading state to true when form submission starts
-    
+
         try {
             // Single API request to /leads
             const leadsResponse = await axios.post(
                 `${process.env.REACT_APP_PUBLIC_BASE_URL}/leads`,
                 dataToCRM
             );
-    
+
             // Check for success based on the response message
             if (leadsResponse.data.message === "Contact successfully updated in FluentCRM") {
-    
+
                 // Google Analytics Event
                 if (window.gtag) {
                     window.gtag('event', 'Contact_form', {
                         event_category: 'Leads',
                         event_label: `${formData.fullName} | ${formData.email} | ${formData.existingWebsite}`, // Use formData for the values
                     });
-    
+
                     console.log('Google Analytics event tracked: Contact_form');
                 }
-    
+
                 setFormVisible(false);
                 setShowSuccessMessage(true);
             } else {
@@ -143,7 +143,7 @@ const Contact = () => {
     };
 
     return (
-        <div id="contact" className="flex flex-col lg:flex-row bg-gray-100 bg-tiles p-8 md:p-20 pb-20 justify-center items-center">
+        <div id="contact" className="flex flex-col lg:flex-row bg-gray-100 bg-tiles p-8 pb-40  justify-center items-center">
             <div className="w-full max-w-7xl h-auto mx-auto flex flex-col justify-center items-center">
                 <div className="h-full flex flex-col w-full space-y-4">
                     <div className="flex flex-col lg:flex-row bg-white rounded-xl w-full">
@@ -158,12 +158,13 @@ const Contact = () => {
                                 provide tailored solutions to help you grow and succeed. Let’s
                                 work together to make an impact!
                             </p>
-                            <a
+                            <button
                                 onClick={handleLetsTalkClick}
-                                className="text-primary font-bold cursor-pointer flex items-center gap-2"
+                                className="text-primary font-bold cursor-pointer flex items-center gap-2 bg-transparent border-none p-0"
                             >
-                                Let's talk <span><BsArrowRightCircle /></span>
-                            </a>
+                                Let’s talk <span><ArrowRightCircle /></span>
+                            </button>
+
                         </div>
 
                         {/* Video Section */}
@@ -182,14 +183,14 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row w-full h-auto lg:h-[50vh] space-y-4 lg:space-y-0 lg:space-x-4">
+                    <div className="flex flex-col lg:flex-row w-full h-auto space-y-4 lg:space-y-0 lg:space-x-4 items-stretch">
                         {/* Info Section */}
-                        <div className="w-full lg:w-6/12 bg-white p-10 rounded-xl hidden md:flex flex-col justify-between text-left">
+                        <div className="lg:w-6/12 bg-white h-full p-10 rounded-xl hidden md:flex flex-col justify-between text-left min-h-0">
                             <h1 className="text-2xl lg:text-3xl">
                                 Why Choose Us?
                             </h1>
                             <div className='space-y-4'>
-                                <p className="text-gray-600">
+                                <p className="text-gray-600 mt-4">
                                     We offer a range of services tailored to your specific needs. From strategic marketing campaigns to user-friendly website designs, our team is committed to delivering solutions that drive results. Whether you’re just starting out or looking to expand, we’re here to support your growth every step of the way.
                                 </p>
                                 <p>
@@ -197,12 +198,11 @@ const Contact = () => {
                                     We specialize in marketing, web design, SEO, and content creation. Our goal is to create a strong online presence for your business, making it easier for potential customers to find you and engage with your brand.
                                 </p>
                             </div>
-                            <a
-                                onClick={handleLetsTalkClick}
-                                className="text-primary font-bold cursor-pointer flex items-center gap-2"
+                            <button
+                                className="text-primary mt-8 font-bold cursor-pointer flex items-center gap-2"
                             >
-                                Let's talk <span><BsArrowRightCircle /></span>
-                            </a>
+                                Let's talk <span><ArrowRightCircle /></span>
+                            </button>
                         </div>
 
                         {/* Form or Success Message Section */}

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ThemeContext } from '../../ThemeContext';
-import { Link } from 'react-router-dom';
 import services from '../../data/servicesData';
 
 const ServiceInfo = () => {
@@ -49,8 +48,9 @@ const ServiceInfo = () => {
                         <div className='w-full md:w-1/2 flex justify-center'>
                             <img
                                 src={service.image}
-                                alt={`${service.title} image`}
+                                alt={`${service.title}`}
                                 className="w-full rounded-2xl"
+                                loading="lazy"
                             />
                         </div>
                     </div>

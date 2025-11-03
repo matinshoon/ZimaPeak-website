@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ThemeContext } from '../ThemeContext';
 import PageHeader from '../components/PageHeader'
@@ -81,7 +81,7 @@ const About = () => {
                         {teamMembersWithPictures.map((member, index) => (
                             <div key={index} className="flex flex-col items-center m-4">
                                 <div className="w-40 h-40 bg-gray-300 rounded-full overflow-hidden">
-                                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" />
+                                    <img src={member.imageUrl} alt={member.name} className="w-full h-full object-cover" loading="lazy" />
                                 </div>
                                 <p className="text-secondary text-2xl mt-4 font-semibold">{member.name}</p>
                                 <p className="text-gray-500">{member.position}</p>

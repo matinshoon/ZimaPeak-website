@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../ThemeContext';
-import { useNavigate } from 'react-router-dom';
-import { BsArrowUpRightCircle } from "react-icons/bs";
+import { ArrowUpRight } from 'lucide-react';
+import man1 from '../../images/objects/man1.webp';
+import man2 from '../../images/objects/man2.webp';
+import man3 from '../../images/objects/man3.webp';
 
 const Banner = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -14,35 +16,35 @@ const Banner = () => {
   ];
 
   return (
-    <div id="banner" className="z-10 flex flex-col items-center px-4 sm:px-6 lg:px-8 space-y-10">
+    <div id="banner" className="z-10 flex flex-col items-center px-4 md:px-6 lg:px-8 space-y-12 sm:space-y-24 md:space-y-42">
       {/* Header Section */}
       <div className="text-center">
-        <h1 className="text-5xl sm:text-5xl md:text-8xl leading-snug">
+        <h1 className="text-5xl md:text-5xl md:text-8xl leading-snug">
         <span className="text- font-black">Builld & Grow </span><br /> your online <span className='text-secondary ' data-text="presence">presence</span>  <br />
         </h1>
         <p className='mt-4'>- Strategic Websites & Marketing That Fuel Business Growth -</p>
       </div>
 
       {/* Stats Section */}
-      <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-[1vw]">
+      <div className="flex flex-wrap md:flex-nowrap justify-center items-end gap-6 md:gap-[1vw]">
         {/* Card 1 */}
         <div
           className={`${darkMode
             ? 'border-4 border-gray-100'
             : 'text-dark bg-gray-100'
-            } p-6 m-4 rounded-3xl flex flex-col items-start justify-between w-[30%] h-[50vh] hidden md:flex`}
+            } w-full md:w-[45%] lg:w-[30%] h-auto md:h-[50vh] p-6 m rounded-3xl flex flex-col items-start justify-between hidden md:flex`}
         >
           <div className="text-left space-y-6">
-            <h2 className="text-4xl sm:text-5xl font-bold">Case Studies</h2>
-            <p className="text-sm sm:text-base">
+            <h2 className="text-4xl md:text-5xl font-bold">Case Studies</h2>
+            <p className="text-sm md:text-base">
               Your trusted partner for all things digital. Let’s transform your online presence.
             </p>
             <p className="italic font-medium mt-2">Captivate, Engage, and Inspire.</p>
           </div>
-          <div className="w-full flex flex-col sm:flex-row justify-between items-end">
+          <div className="w-full flex flex-col md:flex-row justify-between items-end">
             <a
               href="https://zimapeak.com/go/casestudies"
-              className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 bg-secondary text-white rounded-full shadow-md hover:scale-105 transition-transform duration-300"
+              className="flex items-center justify-center w-16 md:w-20 h-16 md:h-20 bg-secondary text-white rounded-full shadow-md hover:scale-105 transition-transform duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,36 +56,38 @@ const Banner = () => {
                 <path d="M23 5v13.883l-1 .117v-16c-3.895.119-7.505.762-10.002 2.316-2.496-1.554-6.102-2.197-9.998-2.316v16l-1-.117v-13.883h-1v15h9.057c1.479 0 1.641 1 2.941 1 1.304 0 1.461-1 2.942-1h9.06v-15h-1zm-12 13.645c-1.946-.772-4.137-1.269-7-1.484v-12.051c2.352.197 4.996.675 7 1.922v11.613zm9-1.484c-2.863.215-5.054.712-7 1.484v-11.613c2.004-1.247 4.648-1.725 7-1.922v12.051z" />
               </svg>
             </a>
-            <img
+            {/* <img
               src="https://images.ctfassets.net/g69xg0qy1hq0/3oqGGWnWE7YNFWwSjUjJ6E/e554d879ae46009be4abf0504d3c42c3/Isometric_iPad_Pro_Mockup_Vol_2_by_Anthony_Boyd_Graphics__2_.jpg?w=1100&h=825&q=80&fm=avif"
               alt="Example work"
-              className="rounded-lg w-32 sm:w-48 h-32 sm:h-48 object-cover mt-4 sm:mt-0"
-            />
+              className="hidden xl:block rounded-lg w-32 md:w-48 h-32 md:h-48 object-cover mt-4 md:mt-0"
+              loading="lazy"
+            /> */}
           </div>
         </div>
 
         {/* Card 2 */}
-        <div className="w-full sm:w-[45%] lg:w-[30%] h-auto sm:h-[50vh] flex flex-col justify-end items-center">
-          <div className="flex flex-col items-center pb-6 sm:pb-10">
-            <span className={`${darkMode ? 'text-white' : 'text-primary'} hover:bg-white hover:text-primary font-bold py-1 pl-1 pr-4 mb-6 sm:mb-10 rounded-full flex items-center space-x-2`}>
+        <div className="w-full md:w-[45%] lg:w-[30%] h-auto md:h-[50vh] flex flex-col justify-end items-center">
+          <div className="flex w-full flex-col items-center pb-6 md:pb-10">
+            <span className={`${darkMode ? 'text-white' : 'text-primary'} hover:bg-white hover:text-primary font-bold py-1 pl-1 pr-4 mb-6 md:mb-10 rounded-full flex items-center space-x-2`}>
               <div className="flex items-center space-x-[-10px]">
-                {["https://plus.unsplash.com/premium_photo-1671282928655-5ffc9cf95728?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://t3.ftcdn.net/jpg/02/58/89/90/360_F_258899001_68CalsKTRk6PZQgWH9JhR4heBlncCko9.jpg", "https://images.unsplash.com/photo-1595347097560-69238724e7bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"].map((src, i) => (
+                    {[man1, man2, man3].map((src, i) => (
                   <img
                     key={i}
                     src={src}
                     alt={`Client ${i + 1}`}
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
+                    className="w-8 h-8 md:w-10 md:h-10 rounded-full"
+                    loading="lazy"
                   />
                 ))}
               </div>
-              <div className="text-xs sm:text-sm">
+              <div className="text-xs md:text-sm">
                 <p>Loved by +100 business owners</p>
                 <div className="flex items-center space-x-1">
                   <p>5.0</p>
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
-                      className="h-3 w-3 sm:h-4 sm:w-4 text-secondary"
+                      className="h-3 w-3 md:h-4 md:w-4 text-secondary"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -93,7 +97,7 @@ const Banner = () => {
                 </div>
               </div>
             </span>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap w-full gap-4">
               <button
                 onClick={() => {
                   const contactSection = document.getElementById('contact');
@@ -101,13 +105,13 @@ const Banner = () => {
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-6 py-3 bg-primary text-white rounded-full hover:bg-secondary transition-transform transform hover:scale-105"
+                className="w-full px-6 py-3 bg-primary text-white rounded-full hover:bg-secondary transition-transform transform hover:scale-105"
               >
                 Contact Us
               </button>
               <button
               onClick={() => window.location.href = 'https://zimapeak.com/go/booking'}
-                className="px-6 py-3 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-transform transform hover:scale-105"
+                className="w-full text-nowrap  px-6 py-3 bg-white text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-transform transform hover:scale-105"
               >
                 Book a Meeting
               </button>
@@ -118,14 +122,14 @@ const Banner = () => {
             className={`${darkMode
               ? 'border-4 border-gray-100'
               : 'text-dark bg-gray-100'
-              } p-6 rounded-3xl flex flex-col items-start justify-between w-full h-auto sm:h-[40vh] text-left`}
+              } p-6 rounded-3xl flex flex-col items-start justify-between w-full h-auto md:h-[40vh] text-left`}
           >
-            <h2 className="text-4xl sm:text-5xl">{new Date().toLocaleString('default', { month: 'long' })} Offer</h2>
-            <p className="text-sm sm:text-lg">
-              Meta Ads for <span className='text-primary font-bold'>Beauty Businesses</span> – Drive Results Starting at Just <span className='text-secondary'>$600/M</span>!
+            <h2 className="text-4xl md:text-5xl">{new Date().toLocaleString('default', { month: 'long' })} Offer</h2>
+            <p className="text-sm md:text-lg">
+              All-in-one package for <span className='text-primary font-bold'>Beauty Businesses</span> – Drive Results Starting at Just <span className='text-secondary'>$999/M</span>!
             </p>
             <button
-              onClick={() => window.location.href = 'https://zimapeak.com/go/booking'}
+              onClick={() => window.location.href = 'https://zimapeak.com/go/exclusive/'}
               className="mt-4 text-sm font-bold py-2 px-4 bg-primary text-white rounded-full hover:bg-blue-600 transition"
             >
               Learn More!
@@ -135,15 +139,15 @@ const Banner = () => {
 
         {/* Card 3 */}
         <div
-          className={`${darkMode ? 'border-4 border-gray-100' : 'text-dark bg-gray-100'} p-6 rounded-3xl flex flex-col justify-between w-full sm:w-[45%] lg:w-[30%] h-auto sm:h-[50vh]`}
+          className={`${darkMode ? 'border-4 border-gray-100' : 'text-dark bg-gray-100'} w-full md:w-[45%] lg:w-[30%] h-auto md:h-[50vh] p-6 rounded-3xl flex flex-col justify-between w-full md:w-[45%] lg:w-[30%] h-auto md:h-[50vh]`}
         >
           <div className="text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-2">Our Services</h2>
-            <p className="text-sm sm:text-base mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
+            <p className="text-sm md:text-base mb-4">
               Transparency, innovation, and outstanding value.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 text-sm sm:text-base mt-auto">
+          <div className="flex flex-wrap gap-2 text-sm md:text-base mt-auto">
             {services.map((service) => (
               <a
                 key={service.name}
@@ -151,7 +155,7 @@ const Banner = () => {
                 className="py-2 px-4 rounded-full bg-white text-black hover:bg-primary hover:text-white transition flex items-center gap-2"
               >
                 {service.name}
-                <BsArrowUpRightCircle />
+                <ArrowUpRight />
               </a>
             ))}
           </div>

@@ -67,19 +67,19 @@ const Home = () => {
             </Helmet>
             {popupVisible && <PopupBanner closePopup={closePopup} />}
 
-            <div className='md:h-2/3 mt-[15vh] md:mt-0 lg:pt-[10vh] flex flex-col justify-center'>
+            <div className='sm:h-2/3 mt-20 sm:mt-24 flex flex-col justify-center'>
                 <Banner />
             </div>
-            <div className='md:p-0 md:h-1/3 mt-40 md:my-20 flex flex-col justify-end lg:justify-center'>
+            <div className='sm:p-0 sm:h-1/3 mt-40 sm:my-20 flex flex-col justify-end lg:justify-center'>
                 <LogoSlider />
             </div>
-            <div className='md:p-0 md:h-1/3 mt-40 md:my-20 flex flex-col justify-end lg:justify-center'>
+            <div className='sm:p-0 sm:h-1/3 mt-40 sm:my-20 flex flex-col justify-end lg:justify-center flex-nowrap'>
                 <Services />
             </div>
-            <div className='md:p-0 md:h-1/3 mt-40 md:my-20 flex flex-col justify-end lg:justify-center'>
+            <div className='sm:p-0 sm:h-1/3 mt-40 sm:my-20 flex flex-col justify-end lg:justify-center'>
                 <Samples />
             </div>
-            <div className="z-10 my-20 p-10 md:p-0">
+            <div className="z-10 my-20 p-10 sm:p-0">
                 <Stats />
             </div>
             <div className="z-10 my-20">
@@ -88,7 +88,7 @@ const Home = () => {
             <div className='my-20 z-20'>
                 <Testimonial numberToShow="4" />
             </div>
-            <div className='z-30 relative md:p-0 md:h-1/2 my-20 flex flex-col justify-end lg:justify-center rotate-12 -translate-x-10 translate-y-10 w-[115vw]'>
+            <div className='z-30 relative sm:p-0 sm:h-1/2 my-20 flex flex-col justify-end lg:justify-center rotate-12 -translate-x-10 translate-y-10 w-[115vw]'>
                 <TagSlider />
             </div>
             <div className='mt-20 z-20'>

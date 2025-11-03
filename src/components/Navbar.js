@@ -38,21 +38,25 @@ const Navbar = () => {
     window.location.href = 'https://zimapeak.com/go/booking';
   };
 
+  const handleexclusiveClick = () => {
+    window.location.href = 'https://zimapeak.com/go/exclusive/';
+  };
+
   // Function to check if link is active
   const isActive = (path) => location.pathname === path;
 
   return (
     <div className='flex justify-center items-center'>
-    <nav className={`navbar justify-center h-14 md:h-auto md:w-full w-11/12 bg-glass md:bg-inherit md:m-0 mt-4 mx-2 rounded-full md:rounded-none ${hasScrolled ? 'dark' : ''} ${menuOpen ? 'menu-open' : ''}`}>
-      <div className="py-2 px-4 h-full md:px-12 md:mx-auto flex items-center justify-between">
-        <div className={`flex items-center md:w-1/3 space-x-2 ${darkMode ? 'text-white' : 'text-dark'}`}>
-          <div className={`md:bg-inherit ${darkMode ? 'bg-dark' : 'bg-white'} h-10 w-10 rounded-full flex justify-center items-center`}>
-            <img src={`${darkMode ? logowhite : logo}`} className='md:h-10 h-7' alt="Zimapeak Logo" />
+    <nav className={`navbar justify-center h-14 sm:h-auto sm:w-full w-11/12 bg-glass sm:bg-inherit sm:m-0 mt-4 mx-2 rounded-full sm:rounded-none ${hasScrolled ? 'dark' : ''} ${menuOpen ? 'menu-open' : ''}`}>
+      <div className="py-2 px-4 h-full sm:px-12 sm:mx-auto flex items-center justify-between">
+        <div className={`flex items-center sm:w-1/3 space-x-2 ${darkMode ? 'text-white' : 'text-dark'}`}>
+          <div className={`sm:bg-inherit ${darkMode ? 'bg-dark' : 'bg-white'} h-10 w-10 rounded-full flex justify-center items-center`}>
+            <img src={`${darkMode ? logowhite : logo}`} className='sm:h-10 h-7' alt="Zimapeak Logo" />
           </div>
-          <a href='/' className={`md:hidden font-bold text-xs ${darkMode ? 'text-white' : 'text-dark'}`}>Zimapeak</a>
+          <a href='/' className={`sm:hidden font-bold text-xs ${darkMode ? 'text-white' : 'text-dark'}`}>Zimapeak</a>
         </div>
 
-        <div className="hidden lg:flex w-1/3 justify-center">
+        <div className="hidden sm:w-1/3 lg:flex justify-center">
           <ul className={`flex space-x-4 ${darkMode ? 'text-white' : 'text-black'}`}>
             <li>
               <a 
@@ -134,6 +138,15 @@ const Navbar = () => {
             </li>
             <li className='pb-6'>
               <a 
+                href="https://zimapeak.com/go/exclusive/" 
+                className={`text-4xl font-bold ${isActive('https://zimapeak.com/go/exclusive/') ? 'text-secondary' : ''} hover:text-gray-300 text-left w-full`} 
+                onClick={handleLinkClick}
+              >
+                Exclusive offer
+              </a>
+            </li>
+            <li className='pb-6'>
+              <a 
                 href="https://zimapeak.com/go/casestudies" 
                 className={`text-4xl font-bold ${isActive('https://zimapeak.com/go/casestudies') ? 'text-secondary' : ''} hover:text-gray-300 text-left w-full`} 
                 onClick={handleLinkClick}
@@ -171,9 +184,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className='flex space-x-2 md:w-1/3 justify-end'>
-          <div className='justify-end lg:flex md:w-1/3'>
-            <button onClick={handleGetStartedClick} className={`relative transition duration-200 bg-secondary hover:bg-primary md:font-bold h-10 w-full md:w-auto md:h-auto px-4 md:py-3 rounded-full text-white`}>
+        <div className='flex space-x-2 sm:w-1/3 justify-end'>
+          <div className='justify-end sm:flex w-full'>
+            <button onClick={handleexclusiveClick} className={`hidden mr-2 sm:flex relative transition duration-200 bg-primary hover:bg-primary sm:font-bold h-10 w-full sm:w-auto sm:h-auto px-4 sm:py-3 rounded-full text-white`}>
+              <div className='flex items-center justify-center space-x-2'>
+                <p className='text-xs'>Exclusive offer</p>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </button>
+            <button onClick={handleGetStartedClick} className={`relative transition duration-200 bg-secondary hover:bg-primary sm:font-bold h-10 w-full sm:w-auto sm:h-auto px-4 sm:py-3 rounded-full text-white`}>
               <div className='flex items-center justify-center space-x-2'>
                 <p className='text-xs'>Book Appointment</p>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

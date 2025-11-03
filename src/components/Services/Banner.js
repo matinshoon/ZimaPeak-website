@@ -1,11 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../../ThemeContext';
-import { MdRadioButtonUnchecked, MdRadioButtonChecked } from 'react-icons/md';
+import { Circle, CircleDot } from 'lucide-react';
 import { format, addDays, subDays } from 'date-fns';
 import { Line } from 'react-chartjs-2';
-import { Link } from 'react-router-dom';
 import Card2Image from '../../images/1.jpg';
-import Card5Vid from '../../videos/1.mp4';
+import Card5Vid from '../../videos/1.webm'
 
 const Banner = () => {
     const { darkMode } = useContext(ThemeContext);
@@ -150,9 +149,9 @@ const Banner = () => {
                                     <li key={index} className="flex items-center justify-start py-2">
                                         <button className={`flex items-center justify-center mr-2 focus:outline-none rounded-full ${darkMode ? 'text-gray-300 border-gray-300' : 'text-green-500 border-green-500'}`}>
                                             {darkMode ? (
-                                                <MdRadioButtonUnchecked size={12} />
+                                                <Circle size={12} />
                                             ) : (
-                                                <MdRadioButtonChecked size={12} />
+                                                <CircleDot size={12} />
                                             )}
                                         </button>
                                         <span className="text-lg">{task}</span>

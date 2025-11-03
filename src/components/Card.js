@@ -8,6 +8,7 @@ const Card = ({ data }) => {
           src={data.imageSrc}
           alt={data.title}
           className="w-full h-40 sm:h-[58%] rounded-xl object-cover"
+          loading="lazy"
         />
         <h2 className="text-lg font-semibold line-clamp-2" dangerouslySetInnerHTML={{ __html: data.title }}></h2>
         <p className="text-sm mt-2 line-clamp-2">{data.description}</p>

@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../../ThemeContext';
-import { BsArrowUpRightCircle } from "react-icons/bs";
+import {useEffect, useState } from 'react';
+
+import { ArrowUpRight } from 'lucide-react';
 import axios from 'axios';
 
 const Portfolio = () => {
-    const { darkMode } = useContext(ThemeContext);
+    // const { darkMode } = useContext(ThemeContext);
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -69,6 +69,7 @@ const Portfolio = () => {
                                     src={project.banner} 
                                     alt={project.title} 
                                     className="w-full h-40 sm:h-[58%] rounded-xl object-cover" 
+                                    loading="lazy"
                                 />
                                 <div className="p-4 text-left">
                                     <h2 className="text-lg md:text-xl font-semibold" dangerouslySetInnerHTML={{ __html: project.title }}></h2>
@@ -79,7 +80,7 @@ const Portfolio = () => {
                                         className="flex items-center text-blue-500 mt-4 hover:text-blue-700"
                                     >
                                         <span>View Case Study</span>
-                                        <BsArrowUpRightCircle className="ml-2" />
+                                        <ArrowUpRight className="ml-2" />
                                     </button>
                                 </div>
                             </div>

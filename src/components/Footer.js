@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { ThemeContext } from '../ThemeContext';
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
 import logo from "../images/logo-primary.png"; // Ensure the correct path to your logo image
 
 function Footer() {
@@ -84,9 +83,9 @@ function Footer() {
         <div className="flex flex-col items-center md:w-1/2 lg:w-1/4 mb-4 md:mb-0">
           <img src={logo} className='h-32 mb-4' alt="Zimapeak Logo" /> {/* Increased size of the logo */}
           <div className="flex justify-center mb-4">
-            <a href="https://x.com/zimapeak" className="mx-2 text-decoration-none">
+            {/* <a href="https://x.com/zimapeak" className="mx-2 text-decoration-none">
               <FaXTwitter size={24} />
-            </a>
+            </a> */}
             <a href="https://www.facebook.com/profile.php?id=61559690607181" className="mx-2 text-decoration-none">
               <FaFacebook size={24} />
             </a>

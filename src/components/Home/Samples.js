@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import sampleWorks from '../../data/sampleworks';
-import { ThemeContext } from '../../ThemeContext';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Samples = () => {
-    const { darkMode } = useContext(ThemeContext);
+    // const { darkMode } = useContext(ThemeContext);
 
     // Slider settings for react-slick
     const sliderSettings = {

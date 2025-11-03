@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../ThemeContext';
-import { BsArrowUpRightCircle } from 'react-icons/bs';
+import { ArrowUpRight } from 'lucide-react';
 
 const services = [
     { name: 'Google Ads', link: '/services' },
@@ -34,7 +34,7 @@ const TagSlider = () => {
                                 className="py-4 px-8 w-[60vw] sm:w-[40vw] md:w-[20vw] justify-center items-center flex rounded-full bg-white text-primary text-xl font-bold hover:bg-secondary hover:text-white transition flex items-center gap-2"
                             >
                                 {service.name}
-                                <BsArrowUpRightCircle />
+                                <ArrowUpRight />
                             </a>
                         </div>
                     ))}
